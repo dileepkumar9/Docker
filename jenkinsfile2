@@ -1,0 +1,27 @@
+pipeline {
+    agent any
+    
+
+
+
+   stages {
+        stage('git code') {
+            steps {
+                git branch:'main', url:
+            }
+        }
+        stage('build code') {
+            steps {
+                sh 'mvn clean install package'
+            }
+        }
+       
+           stage('Deploy') {
+            steps {
+            deploy adapters: [tomcat9(credentialsId: 'tomcat', path: '', url: 'http://35.78.87.217:8080/')], contextPath: 'jenkinsfile2', war: '**/*.war'
+            }
+        }
+               
+            }
+        }
+    
