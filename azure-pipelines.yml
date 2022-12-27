@@ -1,0 +1,8 @@
+name: sampledemo_$(Date:yyyyMMdd)$(Rev:r)
+trigger:
+ - Main
+pool:
+ name: Default
+steps:
+
+  
