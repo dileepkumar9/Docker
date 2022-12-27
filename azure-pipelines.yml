@@ -3,6 +3,6 @@ trigger:
  - Main
 pool:
  name: Default
-steps:
+ steps:
 
   
